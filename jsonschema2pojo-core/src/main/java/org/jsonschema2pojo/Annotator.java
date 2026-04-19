@@ -234,6 +234,76 @@ public interface Annotator {
     void timeField(JFieldVar field, JDefinedClass clazz, JsonNode propertyNode);
 
     /**
+     * Add validation annotations for a non-null field when supported by the
+     * annotator implementation.
+     */
+    default void validationNotNull(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+    }
+
+    /**
+     * Add validation annotations for a non-empty field when supported by the
+     * annotator implementation.
+     */
+    default void validationNotEmpty(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+    }
+
+    /**
+     * Add validation annotations for a non-blank field when supported by the
+     * annotator implementation.
+     */
+    default void validationNotBlank(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+    }
+
+    /**
+     * Add validation annotations for a size-constrained field when supported by
+     * the annotator implementation.
+     */
+    default void validationSize(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+    }
+
+    /**
+     * Add validation annotations for a minimum-constrained field when supported
+     * by the annotator implementation.
+     */
+    default void validationMin(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+    }
+
+    /**
+     * Add validation annotations for a maximum-constrained field when supported
+     * by the annotator implementation.
+     */
+    default void validationMax(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+    }
+
+    /**
+     * Add validation annotations for a pattern-constrained field when supported
+     * by the annotator implementation.
+     */
+    default void validationPattern(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+    }
+
+    /**
+     * Add validation annotations for an email-constrained field when supported
+     * by the annotator implementation.
+     */
+    default void validationEmail(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+    }
+
+    /**
+     * Add validation annotations for a decimal minimum-constrained field when
+     * supported by the annotator implementation.
+     */
+    default void validationDecimalMin(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+    }
+
+    /**
+     * Add validation annotations for a decimal maximum-constrained field when
+     * supported by the annotator implementation.
+     */
+    default void validationDecimalMax(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+    }
+
+    /**
      * Add the necessary annotations to the field that will hold 'additional' properties.
      *
      * @param field

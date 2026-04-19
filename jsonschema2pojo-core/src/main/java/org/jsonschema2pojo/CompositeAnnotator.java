@@ -167,4 +167,74 @@ public class CompositeAnnotator implements Annotator {
             annotator.timeField(field, clazz, propertyNode);
         }
     }
+
+    @Override
+    public void validationNotNull(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+        for (Annotator annotator : annotators) {
+            annotator.validationNotNull(field, clazz, propertyName, propertyNode);
+        }
+    }
+
+    @Override
+    public void validationNotEmpty(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+        for (Annotator annotator : annotators) {
+            annotator.validationNotEmpty(field, clazz, propertyName, propertyNode);
+        }
+    }
+
+    @Override
+    public void validationNotBlank(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+        for (Annotator annotator : annotators) {
+            annotator.validationNotBlank(field, clazz, propertyName, propertyNode);
+        }
+    }
+
+    @Override
+    public void validationSize(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+        for (Annotator annotator : annotators) {
+            annotator.validationSize(field, clazz, propertyName, propertyNode);
+        }
+    }
+
+    @Override
+    public void validationMin(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+        for (Annotator annotator : annotators) {
+            annotator.validationMin(field, clazz, propertyName, propertyNode);
+        }
+    }
+
+    @Override
+    public void validationMax(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+        for (Annotator annotator : annotators) {
+            annotator.validationMax(field, clazz, propertyName, propertyNode);
+        }
+    }
+
+    @Override
+    public void validationPattern(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+        for (Annotator annotator : annotators) {
+            annotator.validationPattern(field, clazz, propertyName, propertyNode);
+        }
+    }
+
+    @Override
+    public void validationEmail(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+        for (Annotator annotator : annotators) {
+            annotator.validationEmail(field, clazz, propertyName, propertyNode);
+        }
+    }
+
+    @Override
+    public void validationDecimalMin(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+        for (Annotator annotator : annotators) {
+            annotator.validationDecimalMin(field, clazz, propertyName, propertyNode);
+        }
+    }
+
+    @Override
+    public void validationDecimalMax(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+        for (Annotator annotator : annotators) {
+            annotator.validationDecimalMax(field, clazz, propertyName, propertyNode);
+        }
+    }
 }
