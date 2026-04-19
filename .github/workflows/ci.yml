@@ -100,20 +100,15 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v6
 
-      - name: Check for Dockerfile
-        id: dockerfile
-        shell: bash
-        run: |
-          if [ -f Dockerfile ]; then
-            echo "present=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "present=false" >> "$GITHUB_OUTPUT"
-          fi
+      - name: Set up JDK 17
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+
+      - name: Package project for Docker
+        run: ./mvnw -B package -DskipTests
 
       - name: Build Docker image
-        if: steps.dockerfile.outputs.present == 'true'
         run: docker build -t jsonschema2pojo-app .
-
-      - name: Dockerfile missing
-        if: steps.dockerfile.outputs.present != 'true'
-        run: echo "Dockerfile not found. Add deployment files to enable this stage."
